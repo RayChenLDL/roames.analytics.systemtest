@@ -1,0 +1,33 @@
+[
+
+{
+			"#":"1",
+			"RunFlag":"Y",
+			"GridGroup_DEV":"Others",
+			"Client_DEV":"GP",
+			"DataGrid_Name_DEV":"Bays Aurora GP",
+			"Filter1_Name_DEV":"Pa Name",
+			"Filter1_ngReflectName_DEV":"pa_name",
+			"Filter2_Name_DEV":"Pa Number",
+			"Filter2_ngReflectName_DEV":"pa_number",
+			"Value1_for_Filters_DEV":"GP-VZ-100",
+			"Value2_for_Filters_DEV":"GP-VZ-1000",			
+			"Client_UAT":"Georgia Power",
+			"DataGrid_Name_UAT":"Bays - High Priority",
+			"Filter1_Name_UAT":"VZ Name",
+			"Filter1_ngReflectName_UAT":"vz_name",
+			"Filter2_Name_UAT":"VZ No",
+			"Filter2_ngReflectName_UAT":"vz_number",
+			"Value1_for_Filters_UAT":"GP-VZ-1",
+			"Value2_for_Filters_UAT":"GP-VZ-10",
+			"GridGroup_PROD":"Vegetation",
+			"Client_PROD":"Vegetation - GP",
+			"DataGrid_Name_PROD":"Bays (GP)",
+			"Filter1_Name_PROD":"MA Name",
+			"Filter1_ngReflectName_PROD":"ma_name",
+			"Filter2_Name_PROD":"MA No",
+			"Filter2_ngReflectName_PROD":"ma_number",
+			"Value1_for_Filters_PROD":"GP-VZ-100",
+			"Value2_for_Filters_PROD":"GP-VZ-1000"
+}
+]

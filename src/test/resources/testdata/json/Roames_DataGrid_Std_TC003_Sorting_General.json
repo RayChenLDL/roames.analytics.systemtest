@@ -1,0 +1,27 @@
+[
+
+{
+			"#":"1",
+			"RunFlag":"Y",
+			"GridGroup_DEV":"Others",
+			"Client_DEV":"GP",
+			"DataGrid_Name_DEV":"Bays Aurora GP",
+			"sorting_column_DEV":"Bay Id",
+			"sorting_column_ngReflectName_DEV":"bay_id",
+			"sorting_delimiter_DEV":"",
+			"sorting_ascOrDesc_DEV":"ASC",
+			"Client_UAT":"Vegetation",
+			"DataGrid_Name_UAT":"Intrusion - High Priority",
+			"sorting_column_UAT":"Intrusion Id",
+			"sorting_column_ngReflectName_UAT":"intrusion_id",
+			"sorting_delimiter_UAT":"",
+			"sorting_ascOrDesc_UAT":"ASC",
+			"GridGroup_PROD":"Asset Model",
+			"Client_PROD":"Asset Model - Test",
+			"DataGrid_Name_PROD":"Spans (Test)",
+			"sorting_column_PROD":"Bay Id",
+			"sorting_column_ngReflectName_PROD":"bay_id",
+			"sorting_delimiter_PROD":"",
+			"sorting_ascOrDesc_PROD":"ASC"
+}
+]

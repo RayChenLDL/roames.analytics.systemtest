@@ -1,0 +1,81 @@
+echo "Pull Test Automation Docker Image"
+#docker pull roames/fugroauthztestautomation:PROD
+docker login https://docker.pkg.github.com -u $GitHub_UserName --password $GitHub_Password
+docker pull docker.pkg.github.com/fugro/fugro.roames.analytics.systemtest/roamesanalyticssystemtest:v0.07
+
+#Remove all unused networks
+docker network prune --force
+
+echo "Create shared docker data volume"
+docker volume create --name DataVolDownload
+echo "Create system test docker network"
+docker network create nut
+
+# Set up Selenium nut
+# Selenium Hub
+docker run -d -p 4442-4444:4442-4444 \
+--network nut \
+--name selenium-hub \
+selenium/hub:4.0.0-beta-3-prerelease-20210402
+
+# Chrome Node
+docker run -d --network nut --name selenium-chrome \
+-e SE_EVENT_BUS_HOST=selenium-hub \
+-e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+-e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+-v /dev/shm:/dev/shm \
+-v DataVolDownload:/home/seluser \
+selenium/node-chrome:4.0.0-beta-3-prerelease-20210402
+
+# Edge Node
+docker run -d --network nut --name selenium-edge \
+-e SE_EVENT_BUS_HOST=selenium-hub \
+-e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+-e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+-v /dev/shm:/dev/shm \
+-v DataVolDownload:/home/seluser \
+selenium/node-edge:4.0.0-beta-3-prerelease-20210402
+
+# FireFox Node
+docker run -d --network nut --name selenium-firefox \
+-e SE_EVENT_BUS_HOST=selenium-hub \
+-e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+-e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+-v /dev/shm:/dev/shm \
+-v DataVolDownload:/home/seluser \
+selenium/node-firefox:4.0.0-beta-3-prerelease-20210402
+
+
+
+echo "Run Roames Portal Smoke Test"
+
+set +e
+docker run --network nut --name selenium-runner \
+-e TESTENV="PROD" \
+-e MODULE='Standalone_Data_Grids_SystemTest_PROD_Cross_Browsers' \
+-e SELENIUM_GRID='local' \
+-e browser="$Browser" \
+-e ParallelThreads='1' \
+-e HUB_HOST=selenium-hub \
+-e passphrase="$passphrase" \
+-v DataVolDownload:/root \
+--volume="$WORKSPACE":/target \
+docker.pkg.github.com/fugro/fugro.roames.analytics.systemtest/roamesanalyticssystemtest:v0.07
+ERROR=$?
+set -e
+
+echo "Tear down test docker network"
+docker stop selenium-hub selenium-edge selenium-chrome selenium-firefox
+docker rm selenium-runner selenium-hub selenium-edge selenium-chrome selenium-firefox
+docker network rm nut
+echo "Remove shared docker data volume"
+docker volume rm DataVolDownload
+
+if [[ $ERROR != 0 ]] 
+then
+       echo "Standalone Data Grids Test Failed"
+       exit $ERROR
+else
+       echo "Standalone Data Grids Test Passed"
+
+fi

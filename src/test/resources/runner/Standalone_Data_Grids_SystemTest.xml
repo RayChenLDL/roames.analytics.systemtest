@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Roames Standalone Data Grids System Test Automation" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="com.roames.test.listeners.CustomListeners" />
+	</listeners>
+
+	
+	<test name="Roames_DataGrid_Std_TC001_PageTopFilter_General">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC001_PageTopFilter_General" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC001_PageTopFilter_Mapping">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC001_PageTopFilter_Mapping" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC001_PageTopFilter_CheckSum">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC001_PageTopFilter_CheckSum" />
+		</classes>
+	</test>	
+	
+	<test name="Roames_DataGrid_Std_TC002_Export_All_Rows_CSV">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC002_Export_All_Rows_CSV" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC002_Export_Selected_Rows_CSV">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC002_Export_Selected_Rows_CSV" />
+		</classes>
+	</test>	
+	
+	<test name="Roames_DataGrid_Std_TC002_Export_All_Rows_KML">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC002_Export_All_Rows_KML" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC002_Export_Selected_Rows_KML">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC002_Export_Selected_Rows_KML" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC002_Export_Selected_Rows_EXCEL">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC002_Export_Selected_Rows_EXCEL" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC003_Sorting_General">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC003_Sorting_General" />
+		</classes>
+	</test>
+		
+	<test name="Roames_DataGrid_Std_TC006_Favourite_Filter">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC006_Favourite_Filter" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC006_Favourite_Filter_Update">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC006_Favourite_Filter_Update" />
+		</classes>
+	</test>		
+	
+	<test name="Roames_DataGrid_Std_TC006_Favourite_PinColumn">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC006_Favourite_PinColumn" />
+		</classes>
+	</test>	
+	
+	<!-- Failed test JIRA INS-828 	
+	
+	<test name="Roames_DataGrid_Std_TC004_Navigation_From_VZ_To_Bay">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC004_Navigation_From_VZ_To_Bay" />
+		</classes>
+	</test>
+	
+	
+	<test name="Roames_DataGrid_Std_TC004_Navigation_From_VZ_Bay_To_Intrusion">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC004_Navigation_From_VZ_Bay_To_Intrusion" />
+		</classes>
+	</test>
+	
+	
+	
+	
+	
+	
+	
+	<test name="Roames_DataGrid_Std_TC004_Navigation_From_AssetModel_To_Pole">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC004_Navigation_From_AssetModel_To_Pole" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC004_Navigation_From_AssetModel_To_Span">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC004_Navigation_From_AssetModel_To_Span" />
+		</classes>
+	</test>
+	
+	<test name="Roames_DataGrid_Std_TC004_Navigation_From_VZ_To_Intrusion">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC004_Navigation_From_VZ_To_Intrusion" />
+		</classes>
+	</test>
+	
+	-->
+	
+	<!-- Failed test JIRA INS-879
+	
+	<test name="Roames_DataGrid_Std_TC005_ColumnHeaderFilter">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC005_ColumnHeaderFilter" />
+		</classes>
+	</test>	
+
+	-->
+	
+</suite> <!-- Suite -->

@@ -1,0 +1,16 @@
+[
+
+{
+			"#":"1",
+			"RunFlag":"Y",
+			"exportFormat":"KML",	
+			"GridGroup_DEV":"Asset Model",
+			"Client_DEV":"Asset Model - MECS",
+			"DataGrid_Name_DEV":"Poles (MECS)",
+			"Client_UAT":"Vegetation",
+			"DataGrid_Name_UAT":"Intrusion - High Priority",
+			"GridGroup_PROD":"Asset Model",
+			"Client_PROD":"Asset Model - Test",
+			"DataGrid_Name_PROD":"Vegetation Zones Network (Test)"
+}
+]

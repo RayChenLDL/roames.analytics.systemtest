@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Fugro Test Automation" parallel="tests" thread-count="3">
+
+	<listeners>
+		<listener class-name="com.roames.test.listeners.CustomListeners" />
+	</listeners>
+	
+
+	
+	<test name="Roames_DataGrid_Std_TC003_Sorting_General">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC003_Sorting_General" />
+		</classes>
+	</test>
+	
+</suite> <!-- Suite -->

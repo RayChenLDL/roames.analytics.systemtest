@@ -1,0 +1,21 @@
+[
+
+{
+			"#":"1",
+			"RunFlag":"Y",
+			"GridGroup_DEV":"Others",
+			"Client_DEV":"GP",
+			"DataGrid_Name_DEV":"Bays Aurora GP",
+			"Filter_Name_DEV":"Client Id",
+			"Filter_ngReflectName_DEV":"client_id",
+			"Client_UAT":"Vegetation",
+			"DataGrid_Name_UAT":"Intrusion - High Priority",
+			"Filter_Name_UAT":"Client Id",
+			"Filter_ngReflectName_UAT":"client_id",
+			"GridGroup_PROD":"Asset Model",
+			"Client_PROD":"Asset Model - Test",
+			"DataGrid_Name_PROD":"Spans (Test)",
+			"Filter_Name_PROD":"MA Program Type",
+			"Filter_ngReflectName_PROD":"ma_program_type"
+}
+]

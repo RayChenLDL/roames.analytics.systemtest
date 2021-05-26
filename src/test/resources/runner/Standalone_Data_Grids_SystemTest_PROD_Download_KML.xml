@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Fugro Test Automation" parallel="tests" thread-count="1">
+
+	<listeners>
+		<listener class-name="com.roames.test.listeners.CustomListeners" />
+	</listeners>
+	
+	<test name="Roames_DataGrid_Std_TC002_Export_Selected_Rows_KML_AllGrids">
+		<classes>
+			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC002_Export_Selected_Rows_KML_AllGrids" />
+		</classes>
+	</test>
+	
+</suite> <!-- Suite -->
