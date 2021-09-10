@@ -90,9 +90,9 @@ jobs:
     - name: Build the Docker image
       run: |
         docker login https://docker.pkg.github.com -u "${{ github.actor }}" -p "${GITHUB_TOKEN}"
-        docker build . --file Dockerfile --tag docker.pkg.github.com/RayChenLDL/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
-        docker push docker.pkg.github.com/RayChenLDL/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
-        docker rmi docker.pkg.github.com/RayChenLDL/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
+        docker build . --file Dockerfile --tag docker.pkg.github.com/raychenldl/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
+        docker push docker.pkg.github.com/raychenldl/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
+        docker rmi docker.pkg.github.com/raychenldl/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
@@ -111,7 +111,7 @@ jobs:
         docker network create nut
         docker run -d --network nut --name selenium-hub selenium/hub
         docker run -d --network nut -e HUB_HOST=selenium-hub --name selenium-chrome1 --shm-size=1g -v DataVolDownload:/home/seluser selenium/node-chrome
-        docker run --network nut --name test-runner -e TESTENV='PROD' -e MODULE='Standalone_Data_Grids_SystemTest' -e SELENIUM_GRID='local' -e HUB_HOST=selenium-hub -e ParallelThreads='1' -e passphrase=${{secrets.AUTOMATED_TEST_PASS_PHRASE}} -v DataVolDownload:/root --volume="/home":/target docker.pkg.github.com/RayChenLDL/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
+        docker run --network nut --name test-runner -e TESTENV='PROD' -e MODULE='testng' -e SELENIUM_GRID='local' -e HUB_HOST=selenium-hub -e ParallelThreads='1' -e passphrase=${{secrets.AUTOMATED_TEST_PASS_PHRASE}} -v DataVolDownload:/root --volume="/home":/target docker.pkg.github.com/raychenldl/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
