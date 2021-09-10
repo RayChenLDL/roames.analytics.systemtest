@@ -8,10 +8,10 @@
 	
 
 	
-	<test name="Roames_DataGrid_Std_TC003_Sorting_General">
+	<test name="GoogleSampleTestCase">
 		<parameter name="browser" value="firefox" />
 		<classes>
-			<class name="com.roames.test.testcases.datagrid.Roames_DataGrid_Std_TC003_Sorting_General" />
+			<class name="com.roames.test.testcases.GoogleSampleTestCase" />
 		</classes>
 	</test>
 	
