@@ -111,6 +111,7 @@ jobs:
         docker network create nut
         docker run -d --network nut --name selenium-hub selenium/hub
         docker run -d --network nut -e HUB_HOST=selenium-hub --name selenium-chrome1 --shm-size=1g -v DataVolDownload:/home/seluser selenium/node-chrome
+        docker run -d --network nut -e HUB_HOST=selenium-hub --name selenium-firefox1 --shm-size=1g -v DataVolDownload:/home/seluser selenium/node-node-firefox-debug
         docker run --network nut --name test-runner -e TESTENV='PROD' -e MODULE='testng' -e SELENIUM_GRID='local' -e HUB_HOST=selenium-hub -e ParallelThreads='1' -e passphrase=${{secrets.AUTOMATED_TEST_PASS_PHRASE}} -v DataVolDownload:/root --volume="/home":/target docker.pkg.github.com/raychenldl/roames.analytics.systemtest/roamesanalyticssystemtest:${image_tag}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
