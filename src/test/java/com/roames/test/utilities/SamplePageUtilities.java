@@ -26,7 +26,7 @@ public class SamplePageUtilities extends PageBase{
 	 * Open a new browser and go to google home page
 	 * @throws ConfigurationException
 	 */
-	public void openGooglePage() throws ConfigurationException{		
+	public void openGooglePage(ITestContext testContext) throws ConfigurationException{		
 		DesiredCapabilities cap=null;
 		String seleniumHubHost = System.getProperty("HUB_HOST");
 
@@ -34,6 +34,23 @@ public class SamplePageUtilities extends PageBase{
 		if (StringUtils.isEmpty(seleniumGrid)) {
 			seleniumGrid = TestcaseBase.config.getProperty("selneium_grid").toString();
 		}
+		
+		// Browser value order:
+		//                     1 - From Docker command
+		//                     2 - From testNG.xml
+		//                     3 - From Config.properties
+		HashMap<String,String> parameters = new HashMap<String, String>(testContext.getCurrentXmlTest().getAllParameters());
+		if (System.getProperty("browser") != null && !System.getProperty("browser").isEmpty()) {
+			TestcaseBase.setBrowser(System.getProperty("browser"));
+		}else{
+			if(parameters.get("browser") != null) {
+				TestcaseBase.setBrowser(parameters.get("browser"));
+			}else {
+				TestcaseBase.setBrowser(TestcaseBase.config.getProperty("browser").toString());
+			}
+		}
+		
+		this.logTestResult(LogStatus.INFO, "Test is running with browser: " + TestcaseBase.getBrowser());
 
 		if (TestcaseBase.getDriver() == null) {
 
