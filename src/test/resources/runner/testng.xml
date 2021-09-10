@@ -8,8 +8,15 @@
 	
 
 	
-	<test name="GoogleSampleTestCase">
+	<test name="GoogleSampleTestCase_FF">
 		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="com.roames.test.testcases.GoogleSampleTestCase" />
+		</classes>
+	</test>
+	
+	<test name="GoogleSampleTestCase_Chrome">
+		<parameter name="browser" value="chrome" />
 		<classes>
 			<class name="com.roames.test.testcases.GoogleSampleTestCase" />
 		</classes>
