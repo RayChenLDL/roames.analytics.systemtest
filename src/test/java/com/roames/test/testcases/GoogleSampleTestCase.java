@@ -11,7 +11,7 @@ import com.roames.test.base.TestcaseBase;
 import com.roames.test.tasks.googlePage;
 import com.roames.test.utilities.SamplePageUtilities;
 import com.roames.test.utilities.TestcaseUtilities;
-
+import org.testng.ITestContext;
 
 public class GoogleSampleTestCase extends TestcaseBase {
 	
@@ -21,7 +21,7 @@ public class GoogleSampleTestCase extends TestcaseBase {
 	}
 	
 	@Test(dataProviderClass=TestcaseUtilities.class,dataProvider="dpJson")
-	public void googleTest(Hashtable<String,String> data) throws InterruptedException, ConfigurationException {
+	public void googleTest(Hashtable<String,String> data, ITestContext testContext) throws InterruptedException, ConfigurationException {
 		
 		setCurrentRow((int)Double.parseDouble(data.get("#")));
 		
@@ -34,7 +34,7 @@ public class GoogleSampleTestCase extends TestcaseBase {
 		SamplePageUtilities taskSamplePageUtilities = new SamplePageUtilities();
 		
 		// Open a New Browser and go to Google home page
-		taskSamplePageUtilities.openGooglePage();
+		taskSamplePageUtilities.openGooglePage(testContext);
 		
 		// New a instance of class GooglePage
 		googlePage googleP = new googlePage();
