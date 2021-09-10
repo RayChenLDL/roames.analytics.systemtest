@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Fugro Test Automation" parallel="tests" thread-count="3">
+<suite name="Fugro Test Automation" parallel="tests" thread-count="1">
 
 	<listeners>
 		<listener class-name="com.roames.test.listeners.CustomListeners" />
 	</listeners>
-	
-
-	
-	<test name="GoogleSampleTestCase_FF">
-		<parameter name="browser" value="firefox" />
-		<classes>
-			<class name="com.roames.test.testcases.GoogleSampleTestCase" />
-		</classes>
-	</test>
 	
 	<test name="GoogleSampleTestCase_Chrome">
 		<parameter name="browser" value="chrome" />
